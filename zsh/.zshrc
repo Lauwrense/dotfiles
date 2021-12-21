@@ -19,9 +19,11 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 alias ls="exa -la --icons --git"
 alias ll="exa -la --icons --git --ignore-glob .git -T"
+alias dotnvim="cd ~/dotfiles/nvim/.config/nvim; nvim init.lua; cd ~"
 
 EDITOR=nvim
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+neofetch
