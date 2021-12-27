@@ -5,9 +5,9 @@ SAVEHIST=1000
 setopt extendedglob
 unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
 zstyle :compinstall filename '/home/tenwasa/.zshrc'
+zstyle ':completion:*' menu select
 
 autoload -Uz compinit
 compinit
@@ -15,15 +15,39 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export XDG_CACHE_HOME=$HOME/.cache
+export EDITOR=nvim
 
 
-alias ls="exa -la --icons --git"
-alias ll="exa -la --icons --git --ignore-glob .git -T"
+alias v="nvim"
+alias ls="exa -la --icons --git -s type"
+alias ll="exa -la --icons --git --ignore-glob .git -s type -T"
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim; nvim init.lua; cd ~"
 
-EDITOR=nvim
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 neofetch
+
+# Change cursor shape for different vi modes
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';; # block
+        viins|main) echo -ne '\e[5 q';; # beam
+    esac
+}
+
+zle -N zle-keymap-select
+
+zle-line-init() {
+    zle -K viins
+    echo -ne "\e[5 q"
+}
+
+zle -N zle-line-init
+
+echo -ne '\e[5 q'
+
+preexec() {
+    echo -ne '\e[5 q'
+}
