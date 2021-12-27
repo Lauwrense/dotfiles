@@ -1,13 +1,13 @@
 local M = {}
+local telescope = require('telescope')
 
-
-require('telescope').setup {
+telescope.setup ({
     defaults = {
         file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     },
     extensions = {
     },
-}
+})
 
 M.find_files = function ()
     require('telescope.builtin').find_files {

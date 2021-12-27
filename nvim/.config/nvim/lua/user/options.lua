@@ -25,8 +25,15 @@ opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.wrap = false
 opt.splitright = true
+opt.splitbelow = true
 
 opt.autochdir = false
 opt.hidden = true
+opt.fileencoding = 'utf-8'
+opt.cmdheight = 1
+opt.completeopt = {"menuone", "noselect", "preview"}
 
+opt.pumheight = 10
 opt.showtabline = 0
+opt.updatetime = 300
+opt.timeoutlen = 1000
