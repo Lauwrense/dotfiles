@@ -61,7 +61,6 @@ packer.startup(function(use)
     use { 'folke/which-key.nvim' }           -- (user.which-key)
     use { 'nvim-lualine/lualine.nvim' }      -- (user.lualine)
     use { 'akinsho/nvim-toggleterm.lua' }    -- (user.toggleterm)
-    use { 'kyazdani42/nvim-tree.lua' }       -- (user.nvim-tree)
     use { 'tami5/lspsaga.nvim' }             -- (user.lspsaga)
     use { 'folke/trouble.nvim' }             -- (user.trouble)
     use { 'folke/todo-comments.nvim' }       -- (user.todo-comments)
@@ -69,7 +68,6 @@ packer.startup(function(use)
     use { 'ahmedkhalf/project.nvim' }        -- (user.project)
     use { 'andweeb/presence.nvim' }          -- (user.presence)
     use { 'norcalli/nvim-colorizer.lua' }    -- (user.colorizer)
-    use { 'beauwilliams/focus.nvim' }        -- (user.focus)
 
     -- Dependancies
     use { 'nvim-lua/plenary.nvim' }

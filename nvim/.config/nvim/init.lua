@@ -13,7 +13,6 @@ local user_modules = {
     'user.which-key',
     'user.lualine',
     'user.toggleterm',
-    'user.nvim-tree',
     'user.lspsaga',
     'user.trouble',
     'user.todo-comments',
@@ -21,7 +20,6 @@ local user_modules = {
     'user.project',
     'user.presence',
     'user.colorizer',
-    'user.focus'
 }
 
 

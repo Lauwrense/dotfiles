@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/coq_nvim",
     url = "https://github.com/ms-jpq/coq_nvim"
   },
-  ["focus.nvim"] = {
-    loaded = true,
-    path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/focus.nvim",
-    url = "https://github.com/beauwilliams/focus.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -138,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua",
     url = "https://github.com/akinsho/nvim-toggleterm.lua"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
