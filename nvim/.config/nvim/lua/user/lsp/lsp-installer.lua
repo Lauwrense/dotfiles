@@ -19,16 +19,99 @@ for _, name in pairs(servers) do
     end
 end
 
+local on_attach = function (client, bufnr)
+    vim.diagnostic.config({
+        virtual_text = true,
+        signs = true,
+        underline = true,
+        update_in_insert = true,
+        severity_sort = false,
+    })
+end
 
+-- External Tools
+local set_rust_analyzer = function(server, opts)
+    local extension_path = vim.fn.stdpath('data')
+    local codelldb_path = extension_path .. '/dapinstall/codelldb/extension/adapter/codelldb'
+    local liblldb_path = extension_path .. '/dapinstall/codelldb/extensions/lldb/lib/liblldb.so'
+
+    local rust_analyzer_settings = require('user.lsp.settings.rust_analyzer')
+
+    opts = vim.tbl_deep_extend('force', rust_analyzer_settings, opts)
+
+    local opt = {
+        tools = {
+            autoSetHints = true,
+            hover_with_actions = true,
+            executor = require("rust-tools/executors").termopen,
+            runnables = {
+                use_telescope = true
+            },
+            debuggables = {
+                use_telescope = true
+            },
+            inlay_hints = {
+                only_current_line = false,
+                only_current_line_autocmd = "CursorHold",
+                show_parameter_hints = true,
+                parameter_hints_prefix = "<- ",
+                other_hints_prefix = "=> ",
+                max_len_align = false,
+                max_len_align_padding = 1,
+                right_align = false,
+                right_align_padding = 7,
+                highlight = "Comment",
+            },
+            hover_actions = {
+                border = {
+                    {"╭", "FloatBorder"}, {"─", "FloatBorder"},
+                    {"╮", "FloatBorder"}, {"│", "FloatBorder"},
+                    {"╯", "FloatBorder"}, {"─", "FloatBorder"},
+                    {"╰", "FloatBorder"}, {"│", "FloatBorder"}
+                },
+                auto_focus = true
+            },
+            crate_graph = {
+                backend = "x11",
+                output = nil,
+                full = true,
+            }
+        },
+        server = vim.tbl_deep_extend('force', server:get_default_options(), opts),
+        dap = {
+            adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
+        }
+    }
+    require('rust-tools').setup({opt})
+    server:attach_buffers()
+end
+
+
+
+
+
+
+
+
+
+-- LSP Instalelr
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+    local opts = {
+        on_attach = on_attach,
+        capabilities = vim.lsp.protocol.make_client_capabilities()
+    }
 
     if server.name == 'sumneko_lua' then
         local sumneko_lua = require('user.lsp.settings.sumneko_lua')
         opts = vim.tbl_deep_extend('force', sumneko_lua, opts)
-    end
+        server:setup(coq.lsp_ensure_capabilities(opts))
 
-    server:setup(coq.lsp_ensure_capabilities(opts))
+    elseif server.name == 'rust_analyzer' then
+        set_rust_analyzer(server, coq.lsp_ensure_capabilities(opts))
+
+    else
+        server:setup(coq.lsp_ensure_capabilities(opts))
+    end
 end)
 
 lsp_installer.settings({

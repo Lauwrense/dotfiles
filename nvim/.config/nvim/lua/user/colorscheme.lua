@@ -26,3 +26,5 @@ nightfox.setup({
 })
 
 nightfox.load()
+
+require'nvim-web-devicons'.setup({})

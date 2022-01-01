@@ -22,7 +22,8 @@ packer.init({
         open_fn = function()
               return require('packer.util').float({ border = 'single'})
         end
-    }
+    },
+    compile_path = vim.fn.stdpath('config')..'/lua/user/bin/packer_compiled.lua'
 })
 
 packer.startup(function(use)
@@ -56,18 +57,32 @@ packer.startup(function(use)
     use { 'lewis6991/gitsigns.nvim' }
 
 
+    -- DAP (user.dap)
+    use { 'mfussenegger/nvim-dap' }
+    use { 'Pocco81/DAPInstall.nvim' }
+    use { 'simrat39/rust-tools.nvim' }
+
+
+    -- Utils
+    use { 'akinsho/nvim-toggleterm.lua' }            -- (user.toggleterm)
+    use { 'windwp/nvim-autopairs' }                  -- (user.autopairs)
+    use { 'tami5/lspsaga.nvim' }                     -- (user.lspsaga)
+    use { 'folke/trouble.nvim' }                     -- (user.trouble)
+    use { 'folke/todo-comments.nvim' }               -- (user.todo-comments)
+    use { 'norcalli/nvim-colorizer.lua' }            -- (user.colorizer)
+    use { 'numToStr/Comment.nvim' }                  -- (user.comment)
+
+
+
     -- Preferences
-    use { 'windwp/nvim-autopairs' }          -- (user.autopairs)
-    use { 'folke/which-key.nvim' }           -- (user.which-key)
-    use { 'nvim-lualine/lualine.nvim' }      -- (user.lualine)
-    use { 'akinsho/nvim-toggleterm.lua' }    -- (user.toggleterm)
-    use { 'tami5/lspsaga.nvim' }             -- (user.lspsaga)
-    use { 'folke/trouble.nvim' }             -- (user.trouble)
-    use { 'folke/todo-comments.nvim' }       -- (user.todo-comments)
-    use { 'numToStr/Comment.nvim' }          -- (user.comment)
-    use { 'ahmedkhalf/project.nvim' }        -- (user.project)
-    use { 'andweeb/presence.nvim' }          -- (user.presence)
-    use { 'norcalli/nvim-colorizer.lua' }    -- (user.colorizer)
+    use { 'folke/which-key.nvim' }                   -- (user.which-key)
+    use { 'nvim-lualine/lualine.nvim' }              -- (user.lualine)
+    use { 'ahmedkhalf/project.nvim' }                -- (user.project)
+    use { 'andweeb/presence.nvim' }                  -- (user.presence)
+    use { 'lewis6991/impatient.nvim' }               -- (user.impatient)
+    use { 'lukas-reineke/indent-blankline.nvim' }    -- (user.indent-blankline)
+    use { 'beauwilliams/focus.nvim' }                -- (user.focus)
+    use { 'max397574/better-escape.nvim' }           -- (user.better-escape)
 
     -- Dependancies
     use { 'nvim-lua/plenary.nvim' }

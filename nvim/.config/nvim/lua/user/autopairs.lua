@@ -1,6 +1,6 @@
 local npairs = require('nvim-autopairs')
 
-npairs.setup({})
+npairs.setup({ map_cr = false, map_bs = false })
 
 _G.MPairsUtils= {}
 

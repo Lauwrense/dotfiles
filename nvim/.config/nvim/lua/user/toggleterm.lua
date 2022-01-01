@@ -1,6 +1,5 @@
 local toggleterm = require('toggleterm')
 
--- TODO: Configure toggleterm
 toggleterm.setup({
     size = 20,
     hide_numbers = true,
@@ -34,6 +33,7 @@ function _G.set_terminal_keymaps()
     local buf_set_keymap = vim.api.nvim_buf_set_keymap
 
     buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+    buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
     buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
     buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
     buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)

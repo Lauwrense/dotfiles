@@ -34,6 +34,6 @@ opt.cmdheight = 1
 opt.completeopt = {"menuone", "noselect", "preview"}
 
 opt.pumheight = 10
-opt.showtabline = 0
+opt.showtabline = 1
 opt.updatetime = 300
 opt.timeoutlen = 1000

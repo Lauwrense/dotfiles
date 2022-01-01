@@ -1,6 +1,5 @@
 local trouble = require('trouble')
 
--- TODO: Edit trouble configs
 trouble.setup({
     position = "bottom",
     height = 10,
