@@ -14,16 +14,14 @@ set $right l
 
 set $term kitty
 set $browser brave
-set $discord discord-canary --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WebRTCPipeWireCapturer
+set $discord discord-canary --enable-features=UseOzonePlatform --ozone-platform=wayland
+#--enable-features=WebRTCPipeWireCapturer
 
 # Startup
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec steam
-exec $browser
 exec $term
-exec $discord
-exec waybar
-exec_always kanshi &
+exec_always kanshi
+exec_always ~/.config/waybar/launch.sh
 
 
 
@@ -31,13 +29,21 @@ exec_always kanshi &
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec $discord
+bindsym $mod+d exec rofi -show drun
 bindsym $mod+n exec $browser
 
 floating_modifier $mod normal
 
+bindsym $mod+Shift+s exec grimshot save area
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
+
+bindsym $mod+F1 exec brightnessctl set 5%-
+bindsym $mod+F2 exec brightnessctl set 5%+
+bindsym $mod+F10 exec pactl -- set-sink-mute 0 toggle
+bindsym $mod+F11 exec pactl -- set-sink-volume 0 -2%
+bindsym $mod+F12 exec pactl -- set-sink-volume 0 +2%
+
 
 
 # Movement
@@ -100,7 +106,7 @@ bindsym $mod+Shift+0 move container to workspace $wsk10
 # Assignments
 assign [class="Steam"] workspace $wsk8
 assign [app_id="brave-browser"] workspace $wsk9
-for_window [class="discord"] workspace $wsk10
+for_window [class="discord"] move window to workspace $wsk10
 
 
 # Layout

@@ -1,13 +1,15 @@
 vim.g.coq_settings = {
-    auto_start = 'shut-up',
-    keymap = {
-        recommended = false
-    }
+	auto_start = "shut-up",
+	keymap = {
+		recommended = false,
+	},
 }
 
-local coq = require('coq')
-
+local coq = require("coq")
 
 -- Third party modules for COQ
-local coq_3q = require('coq_3p')
-
+require("coq_3p")({
+	{ src = "dap" },
+	{ src = "orgmode", short_name = "ORG" },
+    { src = "vimtex", short_name = "vTEX" },
+})

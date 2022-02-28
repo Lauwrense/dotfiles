@@ -1,43 +1,45 @@
 local user_modules = {
-    'user.plugins',
-    'user.options',
+	"user.plugins",
+	"user.options",
 
-    'user.colorscheme',
-    'user.lsp',
-    'user.coq',
-    'user.treesitter',
-    'user.telescope',
-    'user.gitsigns',
-    'user.dap',
+	"user.colorscheme",
+	"user.lsp",
+	"user.coq",
+	"user.treesitter",
+	"user.telescope",
+	"user.gitsigns",
+	"user.neorg",
+	"user.dap",
 
-    'user.autopairs',
-    'user.toggleterm',
-    'user.lspsaga',
-    'user.trouble',
-    'user.todo-comments',
-    'user.comment',
-    'user.colorizer',
+	"user.autopairs",
+	"user.toggleterm",
+	"user.lspsaga",
+	"user.trouble",
+	"user.todo-comments",
+	"user.comment",
+	"user.colorizer",
+	"user.surround",
+	"user.hop",
 
-    'user.which-key',
-    'user.lualine',
-    'user.project',
-    'user.presence',
-    'user.impatient',
-    'user.indent-blankline',
-    'user.focus',
-    'user.better-escape',
+	"user.which-key",
+	"user.statusline",
+	"user.tabline",
+    "user.tree",
+	"user.impatient",
+	"user.indent-blankline",
+	"user.focus",
+	"user.better-escape",
+    "user.vim",
 }
 
-print('null')
+
+
+-- print("Some placeholder")
 
 for _, module in pairs(user_modules) do
-    local status_ok = pcall(require,module)
-    if not status_ok then
-        print('[M!] ' .. module)
-    end
+	local status_ok = pcall(require, module)
+	if not status_ok then
+		print("[M!] " .. module)
+	end
 end
 
-local compiled_status_ok, _ = require('user.bin.packer_compiled')
-if not compiled_status_ok then
-    return
-end

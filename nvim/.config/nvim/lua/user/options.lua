@@ -13,25 +13,28 @@ opt.signcolumn = "yes"
 opt.termguicolors = true
 opt.guifont = "FiraCode Nerd Font:h17"
 
-opt.hlsearch = true
+opt.hlsearch = false
 opt.ignorecase = true
 opt.smartcase = true
 
 opt.list = true
 opt.listchars = "tab:> ,trail:•,extends:›,precedes:‹"
+opt.spell = true
+vim.cmd([[autocmd VimEnter *.[^t][^e][^x] :set nospell]])
 
 opt.mouse = "a"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.wrap = false
+vim.cmd([[autocmd BufEnter *.tex :set wrap]])
 opt.splitright = true
 opt.splitbelow = true
 
 opt.autochdir = false
 opt.hidden = true
-opt.fileencoding = 'utf-8'
+opt.fileencoding = "utf-8"
 opt.cmdheight = 1
-opt.completeopt = {"menuone", "noselect", "preview"}
+opt.completeopt = { "menuone", "noselect", "preview", "noinsert" }
 
 opt.pumheight = 10
 opt.showtabline = 1

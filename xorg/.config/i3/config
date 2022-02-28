@@ -14,12 +14,10 @@ set $term kitty
 set $browser brave
 
 # Startup Applications
-exec --no-startup-id discord-canary
-exec --no-startup-id steam
-exec --no-startup-id $browser
 exec --no-startup-id $term
 exec_always --no-startup-id feh --bg-fill ~/dotfiles/bg/nord-sky-lake.png
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id picom &
 
 
 
