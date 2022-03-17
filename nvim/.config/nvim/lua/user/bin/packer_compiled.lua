@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/tami5/lspsaga.nvim"
   },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
   neorg = {
     loaded = true,
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/neorg",
@@ -234,11 +239,6 @@ _G.packer_plugins = {
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/spellsitter.nvim",
     url = "https://github.com/lewis6991/spellsitter.nvim"
   },
-  ["surround.nvim"] = {
-    loaded = true,
-    path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/surround.nvim",
-    url = "https://github.com/blackCauldron7/surround.nvim"
-  },
   ["tabby.nvim"] = {
     loaded = true,
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/tabby.nvim",
@@ -268,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  ["vim-hardtime"] = {
+    loaded = true,
+    path = "/home/tenwasa/.local/share/nvim/site/pack/packer/start/vim-hardtime",
+    url = "https://github.com/takac/vim-hardtime"
   },
   vimtex = {
     loaded = true,

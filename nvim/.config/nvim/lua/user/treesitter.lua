@@ -25,16 +25,6 @@ parser_config.norg_table = {
 	},
 }
 
-parser_config.mcfunction = {
-	install_info = {
-		url = "https://github.com/theusaf/tree-sitter-mcfunction-lang",
-		files = { "src/parser.c" },
-        branch = "master",
-        generate_requires_npm = true
-	},
-    filetype = "mcfunction",
-}
-
 treesitter.setup({
 	ensure_installed = "maintained",
 	sync_install = false,

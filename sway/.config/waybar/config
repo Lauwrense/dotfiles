@@ -35,6 +35,7 @@
         "format": "<span color=\"#B48EAD\"></span> {:%H:%M}",
         "format-alt": "<span color=\"#B48EAD\"></span> {:%b %d %Y}",
         "tooltip-format": "",
+        "interval": 30,
     },
     "cpu": {
         "format": "<span color=\"#A3BE8C\"></span> {usage}%",

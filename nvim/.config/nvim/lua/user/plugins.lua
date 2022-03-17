@@ -83,7 +83,7 @@ packer.startup(function(use)
 	use({ "folke/todo-comments.nvim" }) -- (user.todo-comments)
 	use({ "norcalli/nvim-colorizer.lua" }) -- (user.colorizer)
 	use({ "numToStr/Comment.nvim" }) -- (user.comment)
-	use({ "blackCauldron7/surround.nvim" }) -- (user.surround)
+	use("echasnovski/mini.nvim") -- (user.mini)
 	use({ "phaazon/hop.nvim" }) -- (user.hop)
 
 	-- Preferences
@@ -95,7 +95,7 @@ packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- (user.indent-blankline)
 	use({ "beauwilliams/focus.nvim" }) -- (user.focus)
 	use({ "max397574/better-escape.nvim" }) -- (user.better-escape)
-	-- use({ "takac/vim-hardtime" })
+	use({ "takac/vim-hardtime" })
 
 	-- Dependancies
 	use({ "nvim-lua/plenary.nvim" })

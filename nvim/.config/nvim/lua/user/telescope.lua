@@ -6,6 +6,7 @@ local themes = require("telescope.themes")
 telescope.setup({
 	defaults = {
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
+        file_ignore_patterns = {"target", "build"},
 		layout_config = {},
 		mappings = {
 			i = {

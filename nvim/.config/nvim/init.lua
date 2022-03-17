@@ -18,12 +18,11 @@ local user_modules = {
 	"user.todo-comments",
 	"user.comment",
 	"user.colorizer",
-	"user.surround",
+    "user.mini",
 	"user.hop",
 
 	"user.which-key",
 	"user.statusline",
-	"user.tabline",
     "user.tree",
 	"user.impatient",
 	"user.indent-blankline",
@@ -33,8 +32,6 @@ local user_modules = {
 }
 
 
-
--- print("Some placeholder")
 
 for _, module in pairs(user_modules) do
 	local status_ok = pcall(require, module)

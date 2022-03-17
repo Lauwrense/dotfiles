@@ -19,8 +19,8 @@ opt.smartcase = true
 
 opt.list = true
 opt.listchars = "tab:> ,trail:•,extends:›,precedes:‹"
-opt.spell = true
-vim.cmd([[autocmd VimEnter *.[^t][^e][^x] :set nospell]])
+opt.spell = false
+vim.cmd([[autocmd VimEnter *.tex :set spell]])
 
 opt.mouse = "a"
 opt.scrolloff = 8

@@ -144,10 +144,10 @@ local set_rust_analyzer = function(server, opts)
 	server:attach_buffers()
 end
 
-require("lspconfig").gdscript.setup({
-	on_attach = on_attach,
-	capabilities = coq.lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities()),
-})
+-- require("lspconfig").gdscript.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = coq.lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities()),
+-- })
 
 -- LSP Instalelr
 lsp_installer.on_server_ready(function(server)

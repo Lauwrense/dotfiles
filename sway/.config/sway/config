@@ -14,8 +14,7 @@ set $right l
 
 set $term kitty
 set $browser brave
-set $discord discord-canary --enable-features=UseOzonePlatform --ozone-platform=wayland
-#--enable-features=WebRTCPipeWireCapturer
+set $discord discord-canary --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WebRTCPipeWireCapturer
 
 # Startup
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -31,6 +30,7 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+n exec $browser
+# bindsym $mod+m exec $discord 
 
 floating_modifier $mod normal
 
