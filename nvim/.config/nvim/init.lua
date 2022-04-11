@@ -32,6 +32,7 @@ local user_modules = {
 }
 
 
+print("some")
 
 for _, module in pairs(user_modules) do
 	local status_ok = pcall(require, module)

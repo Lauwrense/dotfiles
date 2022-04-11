@@ -1,5 +1,6 @@
 local lsp_installer = require("nvim-lsp-installer")
 
+
 local servers = {
 	"sumneko_lua",
 	"bashls",
@@ -35,7 +36,6 @@ local on_attach = function(client, bufnr)
 		update_in_insert = true,
 		severity_sort = false,
 	})
-
 	local wk = require("which-key")
 
 	wk.register({
@@ -135,7 +135,7 @@ local set_rust_analyzer = function(server, opts)
 				full = true,
 			},
 		},
-		server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
+        server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
 		dap = {
 			adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
 		},
@@ -144,12 +144,9 @@ local set_rust_analyzer = function(server, opts)
 	server:attach_buffers()
 end
 
--- require("lspconfig").gdscript.setup({
--- 	on_attach = on_attach,
--- 	capabilities = coq.lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities()),
--- })
 
--- LSP Instalelr
+
+
 lsp_installer.on_server_ready(function(server)
 	local opts = {
 		on_attach = on_attach,
@@ -166,6 +163,11 @@ lsp_installer.on_server_ready(function(server)
 		server:setup(coq.lsp_ensure_capabilities(opts))
 	end
 end)
+
+
+
+
+
 
 lsp_installer.settings({
 	ui = {
